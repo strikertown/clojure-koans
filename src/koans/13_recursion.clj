@@ -1,20 +1,48 @@
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+      true
+      (not (is-even? (dec n)))))
 
+;http://dcm8thlight.blogspot.com/2011/09/day-35.html
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
-      (recur (dec n) (not acc)))))
+        acc
+        (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+	(loop [coll coll
+                  reversed '()]
+            (if (empty? coll)
+              reversed
+              (recur (rest coll) (cons (first coll) reversed)))))
 
+; start a loop with a NUM and ACC with initial values
+; is it = to zero return true
+; if not zero decriment num and eval until acc = true
+;(defn is-even-bigint? [n]
+;  (loop [num   n
+;         acc true]
+;    (if (zero? num)
+;        acc
+;        (recur (dec num) (not acc)))))
+;start a loop with a collectionprop and an empty collection
+; take 1 from collectionprop and add it to the empty coll
+; keep going until nothing left in collprop
+; once empty return emptycoll that should now be filled
+;(defn recursive-reverse [coll]
+;	(loop [collprop coll
+;                  emptyColl '()]
+;            (if (empty? collprop)
+;              emptyColl
+;              (recur (rest collprop) (cons (first collprop) emptyColl)))))
+			  
 (defn factorial [n]
-  __)
+	 (loop [cnt n acc 1]
+       (if (zero? cnt)
+            acc
+          (recur (dec cnt) (* acc cnt)))))
 
 (meditations
   "Recursion ends with a base case"
@@ -48,4 +76,6 @@
   (< 1000000000000000000000000N (factorial 1000N))
 
   "But what happens when the machine limits you?"
-  (< 1000000000000000000000000N (factorial 100003N)))
+  (< 1000000000000000000000000N (factorial 10000N))
+  
+)
