@@ -1,3 +1,8 @@
+#Koans Completed
+
+These koans have been completed with notes attached.
+
+
 # Clojure Koans
 
 The Clojure Koans are a fun and easy way to get started with Clojure - no
