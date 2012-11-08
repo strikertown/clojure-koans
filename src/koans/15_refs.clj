@@ -23,6 +23,8 @@
           @the-world))
 
   "Don't forget to do your work in a transaction!"
+  ;"doseq" is almost interchangable with "for", so why have both doseq and for? The for loop 
+  ;will always return a value and doseq will never return a value.
   (= 0 (do (dosync 
 			(ref-set the-world 0))
 			@the-world))

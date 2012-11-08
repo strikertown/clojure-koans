@@ -15,7 +15,6 @@
           (.getCount latch)))
 
   "Static methods are slashing prices!"
-  ;why
   (== 1024 (Math/pow 2 10))
   
 )
